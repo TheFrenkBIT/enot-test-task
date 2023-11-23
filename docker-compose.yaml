@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/app
+    ports:
+      - 8000:8000
+    working_dir: /app
+    user: '1000:1000'
+    command: php -S 0.0.0.0:8000 -t /app
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=Test-Projects
+    ports:
+      - "5432:5432"
