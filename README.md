@@ -12,6 +12,9 @@ docker-compose up
 composer install
 
 Структура приложения находится в /app
+
 Страница авторизации : /login
+
 Страница регистрации : /register
+
 Страница личного кабинета : /admin
